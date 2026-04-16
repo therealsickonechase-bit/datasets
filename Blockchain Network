@@ -1,0 +1,54 @@
+ Local Ethereum dev network with Hardhat
+1. Install prerequisites (once)
+In PowerShell:
+
+powershell
+
+winget install OpenJS.NodeJS.LTS
+Close/reopen the terminal, then check:
+
+powershell
+
+node -### 2. Create a project and local chain
+
+ PowerShell**, from `C:\Users\USER`:
+
+```bash
+mkdir my-blockchain && cd my-blockchain
+
+npm init -y
+npm install --save-dev hardhat
+
+npx hardhat
+`` choose:
+
+- “Create a JavaScript project”
+- Accept defaults
+
+Hardhat creates a sample project.
+
+### 3. Run the local blockchain node
+
+In the same directory:
+
+```bash
+npx hardhat node
+This:
+
+Starts a local Ethereum JSON-RPC node at `http://127.0.0.1:8545 test accounts with private keys and test ETH
+Leave this terminal running.
+
+4. Deploy a contract to your local network
+Open a second terminal, go to the same folder:
+
+bash
+
+cd C:/Users/USER/my-blockchain
+npx hardhat run scripts/deploy.js --network localhost
+This uses the sample contract and deploy script Hardhat generated.
+
+Now you have:
+
+A running local blockchain
+A deployed smart contract
+RPC endpoint at http://127.0.0:8545 you can connect to from web apps or scripts
